@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - LePhill</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: #1e293b;
+            border-bottom: 2px solid #b8860b;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .logo .le {
+            color: #b8860b;
+        }
+
+        .logo .phill {
+            color: #ffffff;
+        }
+
+        .btn {
+            background-color: #b8860b;
+            color: #1e293b;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #a67c00;
+        }
+
+        /* FAQ Content */
+        section {
+            padding: 4rem 1rem;
+            background-color: #0f172a;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-section {
+            margin-bottom: 3rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #b8860b;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background-color: #1e293b;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .faq-question:hover {
+            background-color: #334155;
+        }
+
+        .faq-arrow {
+            color: #b8860b;
+            transition: transform 0.3s;
+            font-size: 1.25rem;
+        }
+
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 1.5rem;
+            background-color: #334155;
+            border-top: 1px solid #475569;
+            color: #d1d5db;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-section p {
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #9ca3af;
+            padding: 2rem 1rem;
+            border-top: 2px solid #b8860b;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .faq-question {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="le">Le</span><span class="phill">Phill</span>
+            </a>
+            <a href="index.html" class="btn">Voltar</a>
+        </div>
+    </header>
+
+    <!-- FAQ Content -->
+    <section>
+        <div class="container">
+            <h1>Perguntas Frequentes</h1>
+            <p class="subtitle">Respondemos as dúvidas mais comuns antes de você perguntar</p>
+
+            <!-- Sobre o site -->
+            <div class="faq-section">
+                <h2>Sobre o site</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>O site vai funcionar bem no celular?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Sim. Todos os nossos sites são desenvolvidos com design responsivo — se adaptam automaticamente a qualquer tela, seja celular, tablet ou computador.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Consigo atualizar o conteúdo sozinho depois?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Textos e imagens simples podem ser trocados com um pouco de orientação técnica. Para mudanças maiores, oferecemos um serviço de manutenção avulso. Se você precisar atualizar com frequência, podemos conversar sobre a melhor solução.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>O site vai aparecer no Google?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Sim. Todos os nossos sites são entregues com SEO técnico completo configurado — meta tags, sitemap XML, schema markup e robots.txt otimizado. Isso garante que o Google consiga encontrar e indexar seu site corretamente desde o primeiro dia. No plano Premium, configuramos também o Google Search Console e o Google Analytics para você acompanhar os resultados. O posicionamento em si depende de outros fatores como a concorrência na sua área e o tempo de vida do site, mas a base técnica já estará pronta.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Quantas páginas estão incluídas?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Depende do plano: o Simples inclui até 4 páginas, o Negócio até 5 e o Premium até 7. Páginas adicionais podem ser incluídas mediante orçamento.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobre o processo -->
+            <div class="faq-section">
+                <h2>Sobre o processo</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Como funciona o processo de criação?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Passamos por 4 etapas: (1) briefing — entendemos seu negócio e objetivos; (2) criação do layout para sua aprovação; (3) desenvolvimento do site; (4) revisões e entrega final.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Quanto tempo leva para ficar pronto?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Em média 7 a 14 dias úteis após a aprovação do briefing e o recebimento dos materiais. Projetos Premium têm prazo acordado na contratação.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Preciso ter domínio e hospedagem antes de contratar?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Não. Você pode contratar sem ter nada. Cuidamos de tudo ou te orientamos passo a passo na aquisição — como preferir.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Vocês cuidam do domínio e da hospedagem ou sou eu?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Oferecemos as duas opções. Podemos gerenciar tudo por você (já incluso na mensalidade) ou configurar na sua conta, caso prefira ter o controle direto.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Quantas rodadas de revisão estão incluídas?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Estão incluídas 2 rodadas de revisão após a apresentação do layout. Revisões adicionais podem ser solicitadas mediante orçamento.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conteúdo e design -->
+            <div class="faq-section">
+                <h2>Conteúdo e design</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Eu preciso fornecer os textos e imagens ou vocês criam?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Pedimos que você forneça as informações principais sobre o negócio. A partir disso, organizamos e redigimos os textos. Para imagens, usamos banco de imagens gratuito ou fotos suas — nos planos Premium, o auxílio na criação de textos já está incluso.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Posso pedir um design personalizado ou são templates prontos?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Nos planos Negócio e Premium, o design é totalmente personalizado para o seu negócio. No plano Simples, utilizamos um template adaptado à sua identidade visual.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Consigo ver exemplos de sites que já fizeram?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Sim! Temos um portfólio com projetos anteriores. Entre em contato pelo WhatsApp e te enviamos exemplos do tipo de negócio mais próximo ao seu.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suporte e manutenção -->
+            <div class="faq-section">
+                <h2>Suporte e manutenção</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>O que acontece se o site cair ou tiver algum problema?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Se o problema for relacionado ao nosso trabalho, corrigimos sem custo adicional. Problemas de hospedagem são resolvidos por nós caso você esteja no plano com hospedagem gerenciada.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Vocês oferecem suporte após a entrega?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Sim. O suporte gratuito varia por plano: 30 dias no Simples, 60 dias no Negócio e 120 dias no Premium. Após esse período, o suporte continua disponível por chamados avulsos.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Se eu quiser alterar algo depois, como funciona?</span>
+                        <span class="faq-arrow">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Basta nos chamar. Alterações pequenas têm valor fixo por chamado e alterações maiores são orçadas conforme o escopo. Clientes Premium têm 1 alteração mensal gratuita incluída.
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-section">
+                <p>Ainda tem dúvidas? Fale com a gente!</p>
+                <a href="https://wa.me/5511989118627?text=Olá, gostaria de criar um site para meu negócio." target="_blank" class="btn">Conversar no WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 LePhill. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleFAQ(button) {
+            const item = button.parentElement;
+            item.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
