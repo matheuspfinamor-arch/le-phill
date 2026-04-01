@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos e Preços - LePhill</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: #1e293b;
+            border-bottom: 2px solid #b8860b;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .logo .le {
+            color: #b8860b;
+        }
+
+        .logo .phill {
+            color: #ffffff;
+        }
+
+        .btn {
+            background-color: #b8860b;
+            color: #1e293b;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #a67c00;
+        }
+
+        /* Content */
+        section {
+            padding: 4rem 1rem;
+            background-color: #0f172a;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .planos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .plano-card {
+            background-color: #1e293b;
+            border: 2px solid #334155;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .plano-card.popular {
+            border-color: #b8860b;
+            box-shadow: 0 0 20px rgba(184, 134, 11, 0.2);
+        }
+
+        .badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: #b8860b;
+            color: #1e293b;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .plano-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .preco {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #b8860b;
+            margin-bottom: 0.5rem;
+        }
+
+        .preco-info {
+            font-size: 0.875rem;
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+
+        .features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .features li {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: #d1d5db;
+            font-size: 0.875rem;
+        }
+
+        .features li:before {
+            content: "✓";
+            color: #b8860b;
+            font-weight: 700;
+        }
+
+        .seo-info {
+            background-color: #334155;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #b8860b;
+            border-opacity: 0.3;
+            margin: 1.5rem 0;
+            font-size: 0.75rem;
+            color: #d1d5db;
+        }
+
+        .seo-info strong {
+            color: #ffffff;
+        }
+
+        .plano-card .btn {
+            width: 100%;
+            text-align: center;
+            margin-top: 1.5rem;
+            padding: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #9ca3af;
+            padding: 2rem 1rem;
+            border-top: 2px solid #b8860b;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .planos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="le">Le</span><span class="phill">Phill</span>
+            </a>
+            <a href="index.html" class="btn">Voltar</a>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section>
+        <div class="container">
+            <h1>Planos para Todo Tipo de Negócio</h1>
+            <p class="subtitle">Transparência total — sem taxas escondidas</p>
+
+            <div class="planos-grid">
+                <!-- Plano Simples -->
+                <div class="plano-card">
+                    <h2>Pacote Simples</h2>
+                    <div class="preco">R$ 500</div>
+                    <div class="preco-info">pagamento único + <strong>R$ 30/mês</strong></div>
+                    <ul class="features">
+                        <li>Até 4 páginas</li>
+                        <li>Template adaptado</li>
+                        <li>Versão mobile</li>
+                        <li>SEO completo</li>
+                        <li>Suporte por 30 dias</li>
+                    </ul>
+                    <div class="seo-info"><strong>SEO completo incluso</strong> — meta tags, sitemap, schema markup e indexação no Google configurados</div>
+                    <a href="https://wa.me/5511989118627?text=Olá, gostaria de contratar o plano Simples de criação de sites. Qual o próximo passo?" target="_blank" class="btn">Começar agora</a>
+                </div>
+
+                <!-- Plano Negócio -->
+                <div class="plano-card popular">
+                    <div class="badge">Mais Popular</div>
+                    <h2>Pacote Negócio</h2>
+                    <div class="preco">R$ 800</div>
+                    <div class="preco-info">pagamento único + <strong>R$ 35/mês</strong></div>
+                    <ul class="features">
+                        <li>Até 5 páginas</li>
+                        <li>Template personalizado</li>
+                        <li>Integração WhatsApp</li>
+                        <li>Formulário de contato</li>
+                        <li>SEO completo</li>
+                        <li>Suporte por 60 dias</li>
+                    </ul>
+                    <div class="seo-info"><strong>SEO completo incluso</strong> — meta tags, sitemap, schema markup e indexação no Google configurados</div>
+                    <a href="https://wa.me/5511989118627?text=Olá, gostaria de contratar o plano Negócio de criação de sites. Qual o próximo passo?" target="_blank" class="btn">Começar agora</a>
+                </div>
+
+                <!-- Plano Premium -->
+                <div class="plano-card">
+                    <h2>Pacote Premium</h2>
+                    <div class="preco">R$ 1.000</div>
+                    <div class="preco-info">pagamento único + <strong>R$ 40/mês</strong></div>
+                    <ul class="features">
+                        <li>Até 7 páginas</li>
+                        <li>Design 100% personalizado</li>
+                        <li>Auxílio na criação dos textos</li>
+                        <li>SEO avançado</li>
+                        <li>Google Analytics</li>
+                        <li>Integração WhatsApp e Instagram</li>
+                        <li>1 alteração mensal gratuita</li>
+                        <li>Suporte prioritário por 120 dias</li>
+                    </ul>
+                    <div class="seo-info"><strong>SEO completo + Google Search Console e Google Analytics configurados</strong></div>
+                    <a href="https://wa.me/5511989118627?text=Olá, gostaria de contratar o plano Premium de criação de sites. Qual o próximo passo?" target="_blank" class="btn">Começar agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 LePhill. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
